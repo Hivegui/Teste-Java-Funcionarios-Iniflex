@@ -1,6 +1,6 @@
 # Teste Java - Iniflex
 
-Teste prático em Java, onde existe uma classe chamada Pessoa
+- Teste prático em Java, onde existe uma classe chamada Pessoa
 #
   * Classe Pessoa com os atributos: nome e data de nascimento.
   * Classe Funcionario que estende a classe Pessoa, com os atributos: salário e função.
@@ -18,3 +18,7 @@ Teste prático em Java, onde existe uma classe chamada Pessoa
   * Imprimir a lista de funcionários por ordem alfabética.
   * Imprimir o total dos salários dos funcionários.
   * Imprimir quantos salários mínimos ganha cada funcionário, considerando que o salário mínimo é R$1212.00.
+
+#
+
+- IDE Utilizada: IntelliJ, Eclipse, netbeans, etc.
