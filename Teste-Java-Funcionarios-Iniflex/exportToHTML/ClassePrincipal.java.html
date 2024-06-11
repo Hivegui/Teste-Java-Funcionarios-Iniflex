@@ -1,0 +1,235 @@
+<html>
+<head>
+<title>ClassePrincipal.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ClassePrincipal.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">math</span><span class="s2">.</span><span class="s1">BigDecimal</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">time</span><span class="s2">.</span><span class="s1">LocalDate</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">time</span><span class="s2">.</span><span class="s1">format</span><span class="s2">.</span><span class="s1">DateTimeFormatter</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.*;</span>
+
+<span class="s0">class </span><span class="s1">Pessoa </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">String nome</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">LocalDate dataNascimento</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">Pessoa</span><span class="s2">(</span><span class="s1">String nome</span><span class="s2">, </span><span class="s1">LocalDate dataNascimento</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">nome </span><span class="s2">= </span><span class="s1">nome</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">dataNascimento </span><span class="s2">= </span><span class="s1">dataNascimento</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getNome</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">nome</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setNome</span><span class="s2">(</span><span class="s1">String nome</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">nome </span><span class="s2">= </span><span class="s1">nome</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">LocalDate getDataNascimento</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">dataNascimento</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setDataNascimento</span><span class="s2">(</span><span class="s1">LocalDate dataNascimento</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">dataNascimento </span><span class="s2">= </span><span class="s1">dataNascimento</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">String toString</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s3">&quot;Nome: &quot; </span><span class="s2">+ </span><span class="s1">nome </span><span class="s2">+ </span><span class="s3">&quot;, Data de Nascimento: &quot; </span><span class="s2">+ </span><span class="s1">dataNascimento</span><span class="s2">.</span><span class="s1">format</span><span class="s2">(</span><span class="s1">DateTimeFormatter</span><span class="s2">.</span><span class="s1">ofPattern</span><span class="s2">(</span><span class="s3">&quot;dd/MM/yyyy&quot;</span><span class="s2">));</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s0">class </span><span class="s1">Funcionario </span><span class="s0">extends </span><span class="s1">Pessoa </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">BigDecimal salario</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String funcao</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">Funcionario</span><span class="s2">(</span><span class="s1">String nome</span><span class="s2">, </span><span class="s1">LocalDate dataNascimento</span><span class="s2">, </span><span class="s1">BigDecimal salario</span><span class="s2">, </span><span class="s1">String funcao</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">(</span><span class="s1">nome</span><span class="s2">, </span><span class="s1">dataNascimento</span><span class="s2">);</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">salario </span><span class="s2">= </span><span class="s1">salario</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">funcao </span><span class="s2">= </span><span class="s1">funcao</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">BigDecimal getSalario</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">salario</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setSalario</span><span class="s2">(</span><span class="s1">BigDecimal salario</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">salario </span><span class="s2">= </span><span class="s1">salario</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getFuncao</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">funcao</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setFuncao</span><span class="s2">(</span><span class="s1">String funcao</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">funcao </span><span class="s2">= </span><span class="s1">funcao</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">String toString</span><span class="s2">() {</span>
+        <span class="s0">return super</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">() + </span><span class="s3">&quot;, Salário: &quot; </span><span class="s2">+ </span><span class="s1">salario </span><span class="s2">+ </span><span class="s3">&quot;, Função: &quot; </span><span class="s2">+ </span><span class="s1">funcao</span><span class="s2">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s0">public class </span><span class="s1">ClassePrincipal </span><span class="s2">{</span>
+    <span class="s0">private static final </span><span class="s1">DateTimeFormatter formatter </span><span class="s2">= </span><span class="s1">DateTimeFormatter</span><span class="s2">.</span><span class="s1">ofPattern</span><span class="s2">(</span><span class="s3">&quot;dd/MM/yyyy&quot;</span><span class="s2">);</span>
+
+    <span class="s4">// Método para inserir funcionários com base nos dados da tabela</span>
+    <span class="s0">private static </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt; </span><span class="s1">inserirFuncionarios</span><span class="s2">() {</span>
+        <span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt; </span><span class="s1">funcionarios </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">String</span><span class="s2">[] </span><span class="s1">nomes </span><span class="s2">= {</span><span class="s3">&quot;Maria&quot;</span><span class="s2">, </span><span class="s3">&quot;João&quot;</span><span class="s2">, </span><span class="s3">&quot;Caio&quot;</span><span class="s2">, </span><span class="s3">&quot;Miguel&quot;</span><span class="s2">, </span><span class="s3">&quot;Alice&quot;</span><span class="s2">, </span><span class="s3">&quot;Heitor&quot;</span><span class="s2">, </span><span class="s3">&quot;Arthur&quot;</span><span class="s2">, </span><span class="s3">&quot;Laura&quot;</span><span class="s2">, </span><span class="s3">&quot;Heloísa&quot;</span><span class="s2">, </span><span class="s3">&quot;Helena&quot;</span><span class="s2">};</span>
+        <span class="s1">String</span><span class="s2">[] </span><span class="s1">datasNascimento </span><span class="s2">= {</span><span class="s3">&quot;18/10/2000&quot;</span><span class="s2">, </span><span class="s3">&quot;12/05/1990&quot;</span><span class="s2">, </span><span class="s3">&quot;02/05/1961&quot;</span><span class="s2">, </span><span class="s3">&quot;14/10/1988&quot;</span><span class="s2">, </span><span class="s3">&quot;05/01/1995&quot;</span><span class="s2">,</span>
+                <span class="s3">&quot;19/11/1999&quot;</span><span class="s2">, </span><span class="s3">&quot;31/03/1993&quot;</span><span class="s2">, </span><span class="s3">&quot;08/07/1994&quot;</span><span class="s2">, </span><span class="s3">&quot;24/05/2003&quot;</span><span class="s2">, </span><span class="s3">&quot;02/09/1996&quot;</span><span class="s2">};</span>
+        <span class="s1">BigDecimal</span><span class="s2">[] </span><span class="s1">salarios </span><span class="s2">= {</span><span class="s0">new </span><span class="s1">BigDecimal</span><span class="s2">(</span><span class="s3">&quot;2009.44&quot;</span><span class="s2">), </span><span class="s0">new </span><span class="s1">BigDecimal</span><span class="s2">(</span><span class="s3">&quot;2284.38&quot;</span><span class="s2">), </span><span class="s0">new </span><span class="s1">BigDecimal</span><span class="s2">(</span><span class="s3">&quot;9836.14&quot;</span><span class="s2">),</span>
+                <span class="s0">new </span><span class="s1">BigDecimal</span><span class="s2">(</span><span class="s3">&quot;19119.88&quot;</span><span class="s2">), </span><span class="s0">new </span><span class="s1">BigDecimal</span><span class="s2">(</span><span class="s3">&quot;2234.88&quot;</span><span class="s2">), </span><span class="s0">new </span><span class="s1">BigDecimal</span><span class="s2">(</span><span class="s3">&quot;1582.72&quot;</span><span class="s2">),</span>
+                <span class="s0">new </span><span class="s1">BigDecimal</span><span class="s2">(</span><span class="s3">&quot;4071.84&quot;</span><span class="s2">), </span><span class="s0">new </span><span class="s1">BigDecimal</span><span class="s2">(</span><span class="s3">&quot;3017.45&quot;</span><span class="s2">), </span><span class="s0">new </span><span class="s1">BigDecimal</span><span class="s2">(</span><span class="s3">&quot;1606.85&quot;</span><span class="s2">),</span>
+                <span class="s0">new </span><span class="s1">BigDecimal</span><span class="s2">(</span><span class="s3">&quot;2799.93&quot;</span><span class="s2">)};</span>
+        <span class="s1">String</span><span class="s2">[] </span><span class="s1">funcoes </span><span class="s2">= {</span><span class="s3">&quot;Operador&quot;</span><span class="s2">, </span><span class="s3">&quot;Operador&quot;</span><span class="s2">, </span><span class="s3">&quot;Coordenador&quot;</span><span class="s2">, </span><span class="s3">&quot;Diretor&quot;</span><span class="s2">, </span><span class="s3">&quot;Recepcionista&quot;</span><span class="s2">, </span><span class="s3">&quot;Operador&quot;</span><span class="s2">,</span>
+                <span class="s3">&quot;Contador&quot;</span><span class="s2">, </span><span class="s3">&quot;Gerente&quot;</span><span class="s2">, </span><span class="s3">&quot;Eletricista&quot;</span><span class="s2">, </span><span class="s3">&quot;Gerente&quot;</span><span class="s2">};</span>
+
+        <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s5">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">nomes</span><span class="s2">.</span><span class="s1">length</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+            <span class="s1">LocalDate dataNascimento </span><span class="s2">= </span><span class="s1">LocalDate</span><span class="s2">.</span><span class="s1">parse</span><span class="s2">(</span><span class="s1">datasNascimento</span><span class="s2">[</span><span class="s1">i</span><span class="s2">], </span><span class="s1">formatter</span><span class="s2">);</span>
+            <span class="s1">Funcionario funcionario </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Funcionario</span><span class="s2">(</span><span class="s1">nomes</span><span class="s2">[</span><span class="s1">i</span><span class="s2">], </span><span class="s1">dataNascimento</span><span class="s2">, </span><span class="s1">salarios</span><span class="s2">[</span><span class="s1">i</span><span class="s2">], </span><span class="s1">funcoes</span><span class="s2">[</span><span class="s1">i</span><span class="s2">]);</span>
+            <span class="s1">funcionarios</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">funcionario</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s0">return </span><span class="s1">funcionarios</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s4">// Método para remover o funcionário &quot;João&quot; da lista</span>
+    <span class="s0">private static void </span><span class="s1">removerJoao</span><span class="s2">(</span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt; </span><span class="s1">funcionarios</span><span class="s2">) {</span>
+        <span class="s1">funcionarios</span><span class="s2">.</span><span class="s1">removeIf</span><span class="s2">(</span><span class="s1">funcionario -&gt; funcionario</span><span class="s2">.</span><span class="s1">getNome</span><span class="s2">().</span><span class="s1">equals</span><span class="s2">(</span><span class="s3">&quot;João&quot;</span><span class="s2">));</span>
+    <span class="s2">}</span>
+
+    <span class="s4">// método para imprimir todos os funcionários com suas informações</span>
+    <span class="s0">private static void </span><span class="s1">imprimirFuncionarios</span><span class="s2">(</span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt; </span><span class="s1">funcionarios</span><span class="s2">) {</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s1">Funcionario funcionario </span><span class="s2">: </span><span class="s1">funcionarios</span><span class="s2">) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">funcionario</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s4">// método para receber os 10% de aumento de salário</span>
+    <span class="s0">private static void </span><span class="s1">aumentarSalario</span><span class="s2">(</span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt; </span><span class="s1">funcionarios</span><span class="s2">) {</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s1">Funcionario funcionario </span><span class="s2">: </span><span class="s1">funcionarios</span><span class="s2">) {</span>
+            <span class="s1">BigDecimal aumento </span><span class="s2">= </span><span class="s1">funcionario</span><span class="s2">.</span><span class="s1">getSalario</span><span class="s2">().</span><span class="s1">multiply</span><span class="s2">(</span><span class="s0">new </span><span class="s1">BigDecimal</span><span class="s2">(</span><span class="s3">&quot;0.10&quot;</span><span class="s2">));</span>
+            <span class="s1">BigDecimal novoSalario </span><span class="s2">= </span><span class="s1">funcionario</span><span class="s2">.</span><span class="s1">getSalario</span><span class="s2">().</span><span class="s1">add</span><span class="s2">(</span><span class="s1">aumento</span><span class="s2">);</span>
+            <span class="s1">funcionario</span><span class="s2">.</span><span class="s1">setSalario</span><span class="s2">(</span><span class="s1">novoSalario</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s4">// método para mapear os funcionários por função</span>
+    <span class="s0">private static </span><span class="s1">Map</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt;&gt; </span><span class="s1">agruparPorFuncao</span><span class="s2">(</span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt; </span><span class="s1">funcionarios</span><span class="s2">) {</span>
+        <span class="s1">Map</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt;&gt; </span><span class="s1">funcionariosPorFuncao </span><span class="s2">= </span><span class="s0">new </span><span class="s1">HashMap</span><span class="s2">&lt;&gt;();</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s1">Funcionario funcionario </span><span class="s2">: </span><span class="s1">funcionarios</span><span class="s2">) {</span>
+            <span class="s1">String funcao </span><span class="s2">= </span><span class="s1">funcionario</span><span class="s2">.</span><span class="s1">getFuncao</span><span class="s2">();</span>
+            <span class="s0">if </span><span class="s2">(!</span><span class="s1">funcionariosPorFuncao</span><span class="s2">.</span><span class="s1">containsKey</span><span class="s2">(</span><span class="s1">funcao</span><span class="s2">)) {</span>
+                <span class="s1">funcionariosPorFuncao</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s1">funcao</span><span class="s2">, </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;());</span>
+            <span class="s2">}</span>
+            <span class="s1">funcionariosPorFuncao</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s1">funcao</span><span class="s2">).</span><span class="s1">add</span><span class="s2">(</span><span class="s1">funcionario</span><span class="s2">);</span>
+        <span class="s2">}</span>
+        <span class="s0">return </span><span class="s1">funcionariosPorFuncao</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s4">// método para imprimir os funcionários por função</span>
+    <span class="s0">private static void </span><span class="s1">imprimirFuncionariosPorFuncao</span><span class="s2">(</span><span class="s1">Map</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt;&gt; </span><span class="s1">funcionariosPorFuncao</span><span class="s2">) {</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s1">Map</span><span class="s2">.</span><span class="s1">Entry</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt;&gt; </span><span class="s1">entry </span><span class="s2">: </span><span class="s1">funcionariosPorFuncao</span><span class="s2">.</span><span class="s1">entrySet</span><span class="s2">()) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Função: &quot; </span><span class="s2">+ </span><span class="s1">entry</span><span class="s2">.</span><span class="s1">getKey</span><span class="s2">());</span>
+            <span class="s0">for </span><span class="s2">(</span><span class="s1">Funcionario funcionario </span><span class="s2">: </span><span class="s1">entry</span><span class="s2">.</span><span class="s1">getValue</span><span class="s2">()) {</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">funcionario</span><span class="s2">);</span>
+            <span class="s2">}</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">();</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s4">// método para imprimir os funcionários que fazem aniversário nos meses 10 e 12</span>
+    <span class="s0">private static void </span><span class="s1">imprimirAniversariantes</span><span class="s2">(</span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt; </span><span class="s1">funcionarios</span><span class="s2">) {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Aniversariantes nos meses 10 e 12:&quot;</span><span class="s2">);</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s1">Funcionario funcionario </span><span class="s2">: </span><span class="s1">funcionarios</span><span class="s2">) {</span>
+            <span class="s0">int </span><span class="s1">mesAniversario </span><span class="s2">= </span><span class="s1">funcionario</span><span class="s2">.</span><span class="s1">getDataNascimento</span><span class="s2">().</span><span class="s1">getMonthValue</span><span class="s2">();</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">mesAniversario </span><span class="s2">== </span><span class="s5">10 </span><span class="s2">|| </span><span class="s1">mesAniversario </span><span class="s2">== </span><span class="s5">12</span><span class="s2">) {</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">funcionario</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s4">// método para imprimir o funcionário com a maior idade</span>
+    <span class="s0">private static void </span><span class="s1">imprimirFuncionarioMaisVelho</span><span class="s2">(</span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt; </span><span class="s1">funcionarios</span><span class="s2">) {</span>
+        <span class="s1">Funcionario maisVelho </span><span class="s2">= </span><span class="s1">Collections</span><span class="s2">.</span><span class="s1">max</span><span class="s2">(</span><span class="s1">funcionarios</span><span class="s2">, </span><span class="s1">Comparator</span><span class="s2">.</span><span class="s1">comparing</span><span class="s2">(</span><span class="s1">Funcionario::getDataNascimento</span><span class="s2">));</span>
+        <span class="s1">LocalDate hoje </span><span class="s2">= </span><span class="s1">LocalDate</span><span class="s2">.</span><span class="s1">now</span><span class="s2">();</span>
+        <span class="s0">int </span><span class="s1">idade </span><span class="s2">= </span><span class="s1">hoje</span><span class="s2">.</span><span class="s1">getYear</span><span class="s2">() - </span><span class="s1">maisVelho</span><span class="s2">.</span><span class="s1">getDataNascimento</span><span class="s2">().</span><span class="s1">getYear</span><span class="s2">();</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Funcionário mais velho:&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Nome: &quot; </span><span class="s2">+ </span><span class="s1">maisVelho</span><span class="s2">.</span><span class="s1">getNome</span><span class="s2">() + </span><span class="s3">&quot;, Idade: &quot; </span><span class="s2">+ </span><span class="s1">idade</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s4">// método para imprimir a lista de funcionários por ordem alfabética</span>
+    <span class="s0">private static void </span><span class="s1">imprimirFuncionariosOrdenados</span><span class="s2">(</span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt; </span><span class="s1">funcionarios</span><span class="s2">) {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Lista de funcionários por ordem alfabética:&quot;</span><span class="s2">);</span>
+        <span class="s1">funcionarios</span><span class="s2">.</span><span class="s1">stream</span><span class="s2">()</span>
+                <span class="s2">.</span><span class="s1">sorted</span><span class="s2">(</span><span class="s1">Comparator</span><span class="s2">.</span><span class="s1">comparing</span><span class="s2">(</span><span class="s1">Funcionario::getNome</span><span class="s2">))</span>
+                <span class="s2">.</span><span class="s1">forEach</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">out::println</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s4">// método para imprimir o total dos salários dos funcionários</span>
+    <span class="s0">private static void </span><span class="s1">imprimirTotalSalarios</span><span class="s2">(</span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt; </span><span class="s1">funcionarios</span><span class="s2">) {</span>
+        <span class="s1">BigDecimal totalSalarios </span><span class="s2">= </span><span class="s1">funcionarios</span><span class="s2">.</span><span class="s1">stream</span><span class="s2">()</span>
+                <span class="s2">.</span><span class="s1">map</span><span class="s2">(</span><span class="s1">Funcionario::getSalario</span><span class="s2">)</span>
+                <span class="s2">.</span><span class="s1">reduce</span><span class="s2">(</span><span class="s1">BigDecimal</span><span class="s2">.</span><span class="s1">ZERO</span><span class="s2">, </span><span class="s1">BigDecimal::add</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Total dos salários dos funcionários: &quot; </span><span class="s2">+ </span><span class="s1">totalSalarios</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s4">// método para imprimir quantos salários mínimos cada funcionário recebe</span>
+    <span class="s0">private static void </span><span class="s1">imprimirSalariosMinimos</span><span class="s2">(</span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt; </span><span class="s1">funcionarios</span><span class="s2">) {</span>
+        <span class="s1">BigDecimal salarioMinimo </span><span class="s2">= </span><span class="s0">new </span><span class="s1">BigDecimal</span><span class="s2">(</span><span class="s3">&quot;1212.00&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Salários mínimos ganhos por cada funcionário:&quot;</span><span class="s2">);</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s1">Funcionario funcionario </span><span class="s2">: </span><span class="s1">funcionarios</span><span class="s2">) {</span>
+            <span class="s1">BigDecimal salariosMinimos </span><span class="s2">= </span><span class="s1">funcionario</span><span class="s2">.</span><span class="s1">getSalario</span><span class="s2">().</span><span class="s1">divide</span><span class="s2">(</span><span class="s1">salarioMinimo</span><span class="s2">, </span><span class="s5">2</span><span class="s2">, </span><span class="s1">BigDecimal</span><span class="s2">.</span><span class="s1">ROUND_HALF_UP</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">funcionario</span><span class="s2">.</span><span class="s1">getNome</span><span class="s2">() + </span><span class="s3">&quot;: &quot; </span><span class="s2">+ </span><span class="s1">salariosMinimos</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt; </span><span class="s1">funcionarios </span><span class="s2">= </span><span class="s1">inserirFuncionarios</span><span class="s2">();</span>
+        <span class="s1">removerJoao</span><span class="s2">(</span><span class="s1">funcionarios</span><span class="s2">);</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Funcionários antes do aumento de salário:&quot;</span><span class="s2">);</span>
+        <span class="s1">imprimirFuncionarios</span><span class="s2">(</span><span class="s1">funcionarios</span><span class="s2">);</span>
+
+        <span class="s1">aumentarSalario</span><span class="s2">(</span><span class="s1">funcionarios</span><span class="s2">);</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">Funcionários após o aumento de salário:&quot;</span><span class="s2">);</span>
+        <span class="s1">imprimirFuncionarios</span><span class="s2">(</span><span class="s1">funcionarios</span><span class="s2">);</span>
+
+        <span class="s1">Map</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Funcionario</span><span class="s2">&gt;&gt; </span><span class="s1">funcionariosPorFuncao </span><span class="s2">= </span><span class="s1">agruparPorFuncao</span><span class="s2">(</span><span class="s1">funcionarios</span><span class="s2">);</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">Funcionários agrupados por função:&quot;</span><span class="s2">);</span>
+        <span class="s1">imprimirFuncionariosPorFuncao</span><span class="s2">(</span><span class="s1">funcionariosPorFuncao</span><span class="s2">);</span>
+
+        <span class="s1">imprimirAniversariantes</span><span class="s2">(</span><span class="s1">funcionarios</span><span class="s2">);</span>
+
+        <span class="s1">imprimirFuncionarioMaisVelho</span><span class="s2">(</span><span class="s1">funcionarios</span><span class="s2">);</span>
+
+        <span class="s1">imprimirFuncionariosOrdenados</span><span class="s2">(</span><span class="s1">funcionarios</span><span class="s2">);</span>
+
+        <span class="s1">imprimirTotalSalarios</span><span class="s2">(</span><span class="s1">funcionarios</span><span class="s2">);</span>
+
+        <span class="s1">imprimirSalariosMinimos</span><span class="s2">(</span><span class="s1">funcionarios</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+</pre>
+</body>
+</html>
