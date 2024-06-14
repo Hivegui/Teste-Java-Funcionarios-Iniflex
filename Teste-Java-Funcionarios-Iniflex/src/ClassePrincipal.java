@@ -149,9 +149,12 @@ public class ClassePrincipal {
 
     // método para imprimir o funcionário com a maior idade
     private static void imprimirFuncionarioMaisVelho(List<Funcionario> funcionarios) {
-        Funcionario maisVelho = Collections.max(funcionarios, Comparator.comparing(Funcionario::getDataNascimento));
+        Funcionario maisVelho = Collections.min(funcionarios, Comparator.comparing(Funcionario::getDataNascimento));
         LocalDate hoje = LocalDate.now();
         int idade = hoje.getYear() - maisVelho.getDataNascimento().getYear();
+        if (hoje.getDayOfYear() < maisVelho.getDataNascimento().getDayOfYear()) {
+            idade--;
+        }
         System.out.println("Funcionário mais velho:");
         System.out.println("Nome: " + maisVelho.getNome() + ", Idade: " + idade);
     }
